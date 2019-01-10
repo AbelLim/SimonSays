@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "876105971421",
+    "firebase_url": "https://simonsays-82ea0.firebaseio.com",
+    "project_id": "simonsays-82ea0",
+    "storage_bucket": "simonsays-82ea0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:876105971421:android:b00432be86695cc1",
+        "android_client_info": {
+          "package_name": "com.example.arx8l.simonsays"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "876105971421-rl9hd75iubinv4tthvss8q6bqfau4vn0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.arx8l.simonsays",
+            "certificate_hash": "ff0a4769be167baaf9005e8fa12efd797f8430f0"
+          }
+        },
+        {
+          "client_id": "876105971421-je8rfh93f76dptbmgldr8mbbfm5e8vpc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-u5hvNt3M6FjRy-SF3j7pM3j5cjDnhPA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "876105971421-je8rfh93f76dptbmgldr8mbbfm5e8vpc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
