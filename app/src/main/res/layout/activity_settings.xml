@@ -20,4 +20,70 @@
         android:textStyle="bold"
         android:typeface="serif" />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:fontFamily="casual"
+        android:text="@string/user"
+        android:textAlignment="textStart"
+        android:textColor="@android:color/holo_orange_light"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:typeface="serif" />
+
+    <EditText
+        android:id="@+id/setting_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="40dp"
+        android:background="@android:drawable/editbox_background"
+        android:ems="10"
+        android:fontFamily="casual"
+        android:hint="@string/enter_name"
+        android:inputType="textPersonName"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:typeface="serif" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:fontFamily="casual"
+            android:text="@string/setting_sound"
+            android:textAlignment="textStart"
+            android:textColor="@android:color/holo_orange_light"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:typeface="serif" />
+
+        <Switch
+            android:id="@+id/setting_sfx"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginRight="30dp"
+            android:checked="true"
+            android:fontFamily="casual"
+            android:paddingLeft="30dp"
+            android:showText="false"
+            android:splitTrack="false"
+            android:switchMinWidth="50dp"
+            android:switchPadding="10dp"
+            android:textAlignment="textEnd"
+            android:textColor="@android:color/holo_orange_light"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:typeface="serif"
+            tools:checked="true" />
+
+    </LinearLayout>
+
 </LinearLayout>

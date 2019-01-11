@@ -32,7 +32,7 @@ public class HighScoreManager
     //Request highest scores from database
     public void getHighScore(final highScoreListener listener)
     {
-        Query query = reference.orderByValue().limitToLast(10);
+        Query query = reference.orderByChild("score").limitToLast(10);
         query.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

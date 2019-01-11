@@ -17,6 +17,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class Game extends AppCompatActivity implements View.OnClickListener {
 
+    private SharedPreferences settings;
     private List<Integer> sequence;
     private boolean isPlayerTurn;
     private int currentKey;
@@ -50,6 +51,7 @@ public class Game extends AppCompatActivity implements View.OnClickListener {
     {
         score = 0;
         sequence = new ArrayList<>();
+        settings = getSharedPreferences("PREFERENCES",MODE_PRIVATE);
 
         game_status = findViewById(R.id.game_status);
         game_score = findViewById(R.id.game_score);
@@ -121,7 +123,7 @@ public class Game extends AppCompatActivity implements View.OnClickListener {
     private void endGame()
     {
         HighScoreManager hm = new HighScoreManager();
-        hm.pushUserScore(getUser(),score);
+        hm.pushUserScore(readSetting("user"),score);
         startActivity(new Intent(this, HighScore.class));
         finish();
     }
@@ -131,20 +133,23 @@ public class Game extends AppCompatActivity implements View.OnClickListener {
     {
         btn.setBackgroundColor(light);
 
-        switch (btn.getId())
+        if(readSetting("sound")=="true")
         {
-            case R.id.btn_tl:
-                sound1.start();
-                break;
-            case R.id.btn_tr:
-                sound2.start();
-                break;
-            case R.id.btn_bl:
-                sound3.start();
-                break;
-            case R.id.btn_br:
-                sound4.start();
-                break;
+            switch (btn.getId())
+            {
+                case R.id.btn_tl:
+                    sound1.start();
+                    break;
+                case R.id.btn_tr:
+                    sound2.start();
+                    break;
+                case R.id.btn_bl:
+                    sound3.start();
+                    break;
+                case R.id.btn_br:
+                    sound4.start();
+                    break;
+            }
         }
 
         Handler handler = new Handler();
@@ -221,7 +226,8 @@ public class Game extends AppCompatActivity implements View.OnClickListener {
 
         else
         {
-            failure.start();
+            if(readSetting("sound")=="true")
+                failure.start();
             endGame();
         }
 
@@ -233,12 +239,12 @@ public class Game extends AppCompatActivity implements View.OnClickListener {
         }
     }
 
-    //Get user name from preferences
-    private String getUser()
+    //Get settings from preference.
+    private String readSetting(String key)
     {
         String value;
-        SharedPreferences settings = getPreferences(MODE_PRIVATE);
-        value = settings.getString("user", "Player");
+        value = settings.getString(key, "Error");
         return value;
     }
+
 }
