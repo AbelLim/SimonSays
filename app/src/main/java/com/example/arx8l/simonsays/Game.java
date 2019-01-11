@@ -2,6 +2,7 @@ package com.example.arx8l.simonsays;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.MediaPlayer;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Game extends AppCompatActivity implements View.OnClickListener {
@@ -27,6 +29,12 @@ public class Game extends AppCompatActivity implements View.OnClickListener {
     private Button btn_br;
     private TextView game_status;
     private TextView game_score;
+
+    private MediaPlayer sound1;
+    private MediaPlayer sound2;
+    private MediaPlayer sound3;
+    private MediaPlayer sound4;
+    private MediaPlayer failure;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +64,13 @@ public class Game extends AppCompatActivity implements View.OnClickListener {
         btn_tr.setOnClickListener(this);
         btn_bl.setOnClickListener(this);
         btn_br.setOnClickListener(this);
+
+        sound1 = MediaPlayer.create(this, R.raw.sound1);
+        sound2 = MediaPlayer.create(this, R.raw.sound2);
+        sound3 = MediaPlayer.create(this, R.raw.sound3);
+        sound4 = MediaPlayer.create(this, R.raw.sound4);
+        failure = MediaPlayer.create(this, R.raw.failure);
+
     }
 
     @Override
@@ -116,6 +131,22 @@ public class Game extends AppCompatActivity implements View.OnClickListener {
     {
         btn.setBackgroundColor(light);
 
+        switch (btn.getId())
+        {
+            case R.id.btn_tl:
+                sound1.start();
+                break;
+            case R.id.btn_tr:
+                sound2.start();
+                break;
+            case R.id.btn_bl:
+                sound3.start();
+                break;
+            case R.id.btn_br:
+                sound4.start();
+                break;
+        }
+
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
@@ -151,7 +182,8 @@ public class Game extends AppCompatActivity implements View.OnClickListener {
     //Adds one additional key to the sequence.
     private void extendSequence()
     {
-        int key = ThreadLocalRandom.current().nextInt(0,4);
+        Random r = new Random();
+        int key = r.nextInt(4);
         sequence.add(key);
         demoSequence(0);
     }
@@ -189,6 +221,7 @@ public class Game extends AppCompatActivity implements View.OnClickListener {
 
         else
         {
+            failure.start();
             endGame();
         }
 
