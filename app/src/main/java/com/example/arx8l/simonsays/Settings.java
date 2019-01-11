@@ -4,15 +4,14 @@ import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CompoundButton;
+import android.widget.Switch;
 import android.widget.TextView;
 
 public class Settings extends AppCompatActivity implements View.OnClickListener {
 
-    private TextView textView;
-
     private SharedPreferences settings;
     private SharedPreferences.Editor editor;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,31 +27,30 @@ public class Settings extends AppCompatActivity implements View.OnClickListener 
     //Initialize all UI elements
     private void initView()
     {
-        textView = findViewById(R.id.textView4);
+
     }
 
     //Read setting
-    private int readSetting(String key)
+    private String readSetting(String key)
     {
-        int value;
+        String value;
         SharedPreferences settings = getPreferences(MODE_PRIVATE);
-        value = settings.getInt(key, -1);
+        value = settings.getString(key, "Error");
         return value;
     }
 
     //Edit setting
-    private void editSetting(String key, int value)
+    private void editSetting(String key, String value)
     {
-        editor.putInt(key,value);
+        editor.putString(key,value);
         editor.commit();
     }
 
     //Set default settings
     private void defaultSetting()
     {
-        editSetting("difficulty", 3);
-        editSetting("volume", 5);
-        editSetting("sound", 1);
+        editSetting("user", "Player");
+        editSetting("sound", "true");
     }
 
     //Clear setting

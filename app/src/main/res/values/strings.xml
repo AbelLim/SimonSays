@@ -5,4 +5,8 @@
     <string name="settings">Settings</string>
     <string name="user">User: </string>
     <string name="score">Score:</string>
+    <string name="setting_difficulty">Difficulty: </string>
+    <string name="setting_sound">SFX: </string>
+    <string name="cpu_turn">CPU Turn</string>
+    <string name="player_turn">Player Turn</string>
 </resources>

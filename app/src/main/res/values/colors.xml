@@ -3,4 +3,12 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574b</color>
     <color name="colorAccent">#d81b60</color>
+    <color name="tl_dark">#500000</color>
+    <color name="tl_light">#ff0000</color>
+    <color name="tr_dark">#000738</color>
+    <color name="tr_light">#0022ff</color>
+    <color name="bl_dark">#504100</color>
+    <color name="bl_light">#ffd000</color>
+    <color name="br_dark">#005100</color>
+    <color name="br_light">#00ff00</color>
 </resources>
