@@ -1,0 +1,4 @@
+# SimonSays
+A mobile game application that tests the player's short term memory. The CPU will press a sequence of buttons and the player will replicate that sequence of buttons. Every time they are successful, they are awarded points and the sequence gets longer. The challenge comes when the sequence is long enough that the player's short term memory is tested. The game ends when the player inputs the wrong button for the sequence. Their score is then pushed to a Firebase Database and they are taken to the High Scores screen where the top 10 scores are displayed. In addition, there is a settings page where players can change their name and turn off the SFX of the buttons.
+
+The git repository can be found at https://github.com/AbelLim/SimonSays. The application should be in a runnable state after cloning the project.
